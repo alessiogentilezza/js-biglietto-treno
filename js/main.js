@@ -15,7 +15,7 @@ const numeroKm = parseInt(prompt("Inserisci il numero esatto dei km da percorrer
 const eta = parseInt(prompt("Inserisci l'età del viaggiatore"));
 console.log(eta);
 
-let costoBase = (numeroKm * 0.21);
+const costoBase = (numeroKm * 0.21);
 console.log(costoBase);
 
 const under18 = 18;
@@ -25,13 +25,17 @@ let costoEffettivo;
 
 if (eta < under18) {
     costoEffettivo = (costoBase * 0.8).toFixed(2);
+    document.getElementById('costoBiglietto').innerHTML ="Grazie ai tuoi " + eta + " anni, hai diritto ad uno sconto del 20% quindi pagherai " + costoEffettivo + " €";
+
 } else if (eta > over65) {
     costoEffettivo = (costoBase * 0.6).toFixed(2);
+    alert (document.getElementById('costoBiglietto').innerHTML ="Complimenti!!! Hai diritto ad uno sconto del 40% quindi pagherai " + costoEffettivo + " €");
+
 } else {
     costoEffettivo = (costoBase).toFixed(2);
+    document.getElementById('costoBiglietto').innerHTML ="Mi dispiace, hai " + eta + " anni ma non sei così giovane o abbstanza adulto da ricevere uno sconto quindi pagherai " + costoEffettivo + " €";
 }
 
-document.getElementById('costoBiglietto').innerHTML = costoEffettivo + " €";
 console.log(costoEffettivo);
 
 
