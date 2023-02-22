@@ -24,8 +24,11 @@ const over65 = 65;
 let costoEffettivo;
 
 if (isNaN(numeroKm) || isNaN(eta)) {
+    alert("ATTENZIONE");
     document.getElementById('costoBiglietto').innerHTML = "Mmm qualcosa non va nei tuoi dati, prova ad inserire 2 'numeri' :)";
     console.log('Impossibile fare il calcolo, è stato inserito qualcosa che non è un numero');
+    document.querySelector("body").style.backgroundColor = "red";
+
 } else {
     if (eta < under18) {
         costoEffettivo = (costoBase * 0.8).toFixed(2);
@@ -34,10 +37,14 @@ if (isNaN(numeroKm) || isNaN(eta)) {
     } else if (eta > over65) {
         costoEffettivo = (costoBase * 0.6).toFixed(2);
         alert(document.getElementById('costoBiglietto').innerHTML = "Complimenti!!! Hai diritto ad uno sconto del 40% quindi pagherai " + costoEffettivo + " €");
+        document.querySelector("body").style.backgroundColor = "green";
+
 
     } else {
         costoEffettivo = (costoBase).toFixed(2);
         document.getElementById('costoBiglietto').innerHTML = "Mi dispiace, hai " + eta + " anni ma non sei così giovane o abbstanza adulto da ricevere uno sconto quindi pagherai " + costoEffettivo + " €";
+        document.querySelector("body").style.backgroundColor = "orange";
+
     }
 }
 
