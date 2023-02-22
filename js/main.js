@@ -42,7 +42,7 @@ if (isNaN(numeroKm) || isNaN(eta)) {
 
     } else {
         costoEffettivo = (costoBase).toFixed(2);
-        document.getElementById('costoBiglietto').innerHTML = "Mi dispiace, hai " + eta + " anni ma non sei così giovane o abbstanza adulto da ricevere uno sconto quindi pagherai " + costoEffettivo + " €";
+        document.getElementById('costoBiglietto').innerHTML = "Mi dispiace, hai " + eta + " anni ma non sei così giovane o abbastanza adulto da ricevere uno sconto quindi pagherai " + costoEffettivo + " €";
         document.querySelector("body").style.backgroundColor = "orange";
 
     }
